@@ -88,8 +88,10 @@ class EditorsKit_User_Feedback {
 	 * @param string $seconds Seconds in time.
 	 */
 	public function seconds_to_words( $seconds ) {
+		$seconds = intval( $seconds );
+
 		// Get the years.
-		$years = ( intval( $seconds ) / YEAR_IN_SECONDS ) % 100;
+		$years = intdiv( $seconds, YEAR_IN_SECONDS ) % 100;
 		if ( $years > 1 ) {
 			/* translators: Number of years */
 			return sprintf( __( '%s years', 'block-options' ), $years );
@@ -98,7 +100,7 @@ class EditorsKit_User_Feedback {
 		}
 
 		// Get the weeks.
-		$weeks = ( intval( $seconds ) / WEEK_IN_SECONDS ) % 52;
+		$weeks = intdiv( $seconds, WEEK_IN_SECONDS ) % 52;
 		if ( $weeks > 1 ) {
 			/* translators: Number of weeks */
 			return sprintf( __( '%s weeks', 'block-options' ), $weeks );
@@ -107,7 +109,7 @@ class EditorsKit_User_Feedback {
 		}
 
 		// Get the days.
-		$days = ( intval( $seconds ) / DAY_IN_SECONDS ) % 7;
+		$days = intdiv( $seconds, DAY_IN_SECONDS ) % 7;
 		if ( $days > 1 ) {
 			/* translators: Number of days */
 			return sprintf( __( '%s days', 'block-options' ), $days );
@@ -116,7 +118,7 @@ class EditorsKit_User_Feedback {
 		}
 
 		// Get the hours.
-		$hours = ( intval( $seconds ) / HOUR_IN_SECONDS ) % 24;
+		$hours = intdiv( $seconds, HOUR_IN_SECONDS ) % 24;
 		if ( $hours > 1 ) {
 			/* translators: Number of hours */
 			return sprintf( __( '%s hours', 'block-options' ), $hours );
@@ -125,7 +127,7 @@ class EditorsKit_User_Feedback {
 		}
 
 		// Get the minutes.
-		$minutes = ( intval( $seconds ) / MINUTE_IN_SECONDS ) % 60;
+		$minutes = intdiv( $seconds, MINUTE_IN_SECONDS ) % 60;
 		if ( $minutes > 1 ) {
 			/* translators: Number of minutes */
 			return sprintf( __( '%s minutes', 'block-options' ), $minutes );
@@ -134,7 +136,7 @@ class EditorsKit_User_Feedback {
 		}
 
 		// Get the seconds.
-		$seconds = intval( $seconds ) % 60;
+		$seconds = $seconds % 60;
 		if ( $seconds > 1 ) {
 			/* translators: Number of seconds */
 			return sprintf( __( '%s seconds', 'block-options' ), $seconds );
@@ -325,7 +327,7 @@ class EditorsKit_User_Feedback {
 new EditorsKit_User_Feedback(
 	array(
 		'slug'       => 'editorskit_plugin_feedback',
-		'name'       => __( 'EditorsKit', 'block-options' ),
+		'name'       => 'EditorsKit',
 		'time_limit' => WEEK_IN_SECONDS,
 	)
 );

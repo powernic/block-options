@@ -3,14 +3,15 @@
  * Plugin Name: EditorsKit
  * Plugin URI: https://editorskit.com/
  * Description: EditorsKit is a suite of <strong>page building block options</strong> for the Gutenberg block editor.
- * Version: 1.40.6
- * Author: Munir Kamal
- * Author URI: https://www.munirkamal.com/
+ * Version: 1.41.0
+ * Author: Munir Kamal, Efimenko Nikolay
+ * Author URI: https://github.com/powernic
  * Text Domain: block-options
  * Domain Path: languages
  *
  * @category Gutenberg
  * @author Munir Kamal
+ * @author Efimenko Nikolay
  * @version 1.0
  * @package EditorsKit
  */
@@ -154,7 +155,7 @@ if ( ! class_exists( 'EditorsKit' ) ) :
 		 * @return void
 		 */
 		private function init() {
-			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 99 );
+			add_action( 'init', array( $this, 'load_textdomain' ) );
 			add_action( 'enqueue_block_editor_assets', array( $this, 'block_localization' ) );
 			add_action( 'after_setup_theme', array( $this, 'set_eval' ) );
 		}
@@ -206,7 +207,7 @@ if ( ! class_exists( 'EditorsKit' ) ) :
 		 * @return void
 		 */
 		public function load_textdomain() {
-			load_plugin_textdomain( 'block-options', false, dirname( plugin_basename( EDITORSKIT_PLUGIN_DIR ) ) . '/languages/' );
+			load_plugin_textdomain( 'block-options', false, dirname( plugin_basename( EDITORSKIT_PLUGIN_FILE ) ) . '/languages/' );
 		}
 
 		/**

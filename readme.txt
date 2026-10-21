@@ -4,9 +4,9 @@ Plugin URI: https://editorskit.com
 Contributors: munirkamal
 Tags: Gutenberg blocks, WordPress blocks, gutenberg, blocks, Gutenberg editor
 Requires at least: 5.0
-Tested up to: 6.5
-Requires PHP: 5.6
-Stable tag: 1.40.6
+Tested up to: 7.1.3
+Requires PHP: 7.0
+Stable tag: 1.41.0
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -250,7 +250,7 @@ e.g.
 
 = 1.34.2 =
 * Fix: Bugs and Warnings
-* Remove: Editorskit Deprecated typography addon warning. 
+* Remove: Editorskit Deprecated typography addon warning.
 
 = 1.34.1 =
 * Deprecate: Remove Extendify Templates Library
@@ -269,7 +269,7 @@ e.g.
 * Fix: Toolbar locking issues.
 
 = 1.33.6 =
-* New: Extended WordPress 6.0 block locking functionality to include options to disable block settings and toolbar. 
+* New: Extended WordPress 6.0 block locking functionality to include options to disable block settings and toolbar.
 
 = 1.33.5 =
 * Deprecate: Live Preview with Responsive Controls feature.
